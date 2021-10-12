@@ -1,0 +1,66 @@
+<div class="container">  
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-primary mb-4">Editar empleado</h2>
+    </div>
+      <div class="col-lg-6">
+        <div class="alert alert-primary" role="alert">
+           Los campos con (<em>*</em>) son obligatorios
+        </div>
+      </div>
+  </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card-block">
+                <form id="editar-empleado" class="forms-sample" action="{url}empleados/actualizar/{id}" method="post">
+                    <div class="form-group">
+                        <label for="nombreLabel">Nombre Completo</label>
+                        <input type="text" class="form-control" minlength="5" id="nombreLabel" name="nombre" value="{nombre}" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Correo electronico <em>*</em></label>
+                      <input type="email" class="form-control" name="email" value="{email}" required="">                
+                    </div>                  
+                      <fieldset class="form-group">
+                        
+                        <label class="form-label">Sexo <em>*</em></label>
+
+                        {genero_segmento}
+                            
+                      </fieldset>
+                    <div class="form-group">
+                        <label for="selectAreas">Area *</label>
+                          <select class="form-control" name="areas" id="selectAreas" required="">
+                            {areas}
+                          </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea">Descripcion <em>*</em></label>
+                        <textarea class="form-control p-input" id="exampleTextarea" name="descripcion" rows="3" maxlength="255" required="">{descripcion}</textarea>
+                    </div>
+                     <fieldset class="form-group">
+                          <label class="form-check-label">
+                                    <input class="form-check-input" name="boletines" type="checkbox" {boletin_check}>
+                                    Deseo recibir boletin informativo
+                          </label>
+                      </fieldset>  
+                      <fieldset class="form-group">
+                        <p> Roles <em>*</em></p>
+                          {roles}
+                    </fieldset>
+                               
+                    
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Actualizar</button>
+                    </div>
+                </form>
+            
+        </div>
+      </div>
+      </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $("#editar-empleado").validate();
+  });
+</script>

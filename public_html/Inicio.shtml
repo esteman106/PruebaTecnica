@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-lg-6">    
+        {mensajes}   
+    </div>
+  </div>
+  <div class="row">
+    <h2 class="text-primary mb-4">Lista de Empleados</h2>
+      
+      <div class="col-sm-8"> 
+      </div>
+      <div class="col-sm-4">           
+          <div class="card-block">
+            <button type="button" onclick="window.location.href='{url}empleados'" class="btn btn-primary"><i class="fa fa-plus"></i> Crear </button>                
+          </div>            
+      </div>
+
+  </div>
+    <div class="row">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"><i class="fa fa-user"></i>  Nombre</th>
+              <th scope="col"><i class="fa fa-at"></i>  Email</th>
+              <th scope="col"><i class="fa fa-venus-mars"></i>  Sexo</th>
+              <th scope="col"><i class="fa fa-briefcase"></i> Area</th>
+              <th scope="col"><i class="fa fa-envelope"></i> Boletin</th>            
+              <th scope="col"> Modificar </th>
+              <th scope="col"> Eliminar </th>
+            </tr>
+          </thead>
+          <tbody>
+           {ListaEmpleados}
+          </tbody>
+      </table>
+    </div>
+</div>
